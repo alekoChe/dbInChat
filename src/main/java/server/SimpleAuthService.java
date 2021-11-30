@@ -23,12 +23,6 @@ public class SimpleAuthService implements AuthService {
                 e.printStackTrace();
             }
         }
-//        try {
-//            db.writeFromDBIntoUsersList(users);
-//            db.dropTable();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
     }
 
     @Override

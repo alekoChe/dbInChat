@@ -19,7 +19,7 @@ public class DataBase {
             this.insert("Сидоров", "Иван", "ivan2", "login4","pass4");
             this.insert("Сидоровa", "Мария", "masha2", "login5","pass5");
             this.readEx();
-           
+
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
