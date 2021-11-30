@@ -1,34 +1,29 @@
 package db;
 
+import server.SimpleAuthService;
+
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DataBase {
     private Connection connection;
     private Statement statement;  // этот класс позволяет делать запросы к базе данных
-
-    public static void main(String[] args) {
-        DataBase db = new DataBase();
+    public DataBase(){
         try {
-            db.connect();   // когда приложение стартует
-            db.createTable();
-            db.insert("Иванов", "Иван", "ivan1", "login1","pass1");
-            db.insert("Петров", "Петр", "pedro1", "login2","pass2");
-            db.insert("Иванова", "Мария", "masha1", "login3","pass3");
-            db.insert("Сидоров", "Иван", "ivan2", "login4","pass4");
-            db.readEx();
-            db.dropTable();
-
-//            jdbcApp.update(1, 100);
-//            jdbcApp.select(1);
-//            jdbcApp.select(2);
-//            jdbcApp.selectByName("bob%' union SELECT 1, sql, 1 FROM sqlite_master --");
-//            jdbcApp.batchInsert();
-//            jdbcApp.selectByName("Bob%");
-//            jdbcApp.dropTable();
+            this.connect();   // когда приложение стартует
+            this.createTable();
+            this.insert("Иванов", "Иван", "ivan1", "login1","pass1");
+            this.insert("Петров", "Петр", "pedro1", "login2","pass2");
+            this.insert("Иванова", "Мария", "masha1", "login3","pass3");
+            this.insert("Сидоров", "Иван", "ivan2", "login4","pass4");
+            this.insert("Сидоровa", "Мария", "masha2", "login5","pass5");
+            this.readEx();
+           
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            db.disconnect();  // когда приложение заканчивает работу
+            this.disconnect();  // когда приложение заканчивает работу
         }
     }
 
@@ -83,6 +78,17 @@ public class DataBase {
         try (ResultSet rs = statement.executeQuery("SELECT * FROM chatClients where id = 1;")) {
             while (rs.next()) {
                 System.out.println(rs.getString(4) + " " + rs.getString(5) + " " + rs.getString(6));
+            }
+        }
+    }
+
+    public void writeFromDBIntoUsersList(List users, Integer id) throws SQLException {
+        try (final PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM chatClients WHERE id = ?")) {
+            preparedStatement.setInt(1, id);
+            final ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                //System.out.printf("%s - %s - %s\n", resultSet.getString(4), resultSet.getString(5), resultSet.getString(6));
+                users.add(resultSet.getString(4) + resultSet.getString(5) + resultSet.getString(6));
             }
         }
     }
