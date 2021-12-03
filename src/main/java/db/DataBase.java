@@ -9,21 +9,46 @@ import java.util.List;
 public class DataBase {
     private Connection connection;
     private Statement statement;  // этот класс позволяет делать запросы к базе данных
-    public DataBase(){
-        try {
-            this.connect();   // когда приложение стартует
-            this.createTable();
-            this.insert("Иванов", "Иван", "ivan1", "login1","pass1");
-            this.insert("Петров", "Петр", "pedro1", "login2","pass2");
-            this.insert("Иванова", "Мария", "masha1", "login3","pass3");
-            this.insert("Сидоров", "Иван", "ivan2", "login4","pass4");
-            this.insert("Сидоровa", "Мария", "masha2", "login5","pass5");
-            this.readEx();
 
+    public DataBase(){
+//        try {
+//            //this.dropTable();
+//            this.connect();   // когда приложение стартует
+//            this.createTable();
+//            this.insert("Сидоровa", "Мария", "nick0", "login0","pass0");
+//            this.insert("Иванов", "Иван", "nick1", "login1","pass1");
+//            this.insert("Петров", "Петр", "nick2", "login2","pass2");
+//            this.insert("Иванова", "Мария", "nick3", "login3","pass3");
+//            this.insert("Сидоров", "Иван", "nick4", "login4","pass4");
+//            this.insert("Саидов", "Саид", "nick5", "login5","pass5");
+//            this.insert("Николаев", "Николай", "nick6", "login6","pass6");
+//            this.insert("Николаева", "Анна", "nick7", "login7","pass7");
+//            //this.readEx();
+//
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        } finally {
+//            //this.disconnect();  // когда приложение заканчивает работу
+//        }
+    }
+
+    public static void main(String[] args) {
+        DataBase db = new DataBase();
+        try {
+            db.connect();
+            db.dropTable();
+            db.createTable();
+            db.insert("Сидоровa", "Мария", "nick0", "login0","pass0");
+            db.insert("Иванов", "Иван", "nick1", "login1","pass1");
+            db.insert("Петров", "Петр", "nick2", "login2","pass2");
+            db.insert("Иванова", "Мария", "nick3", "login3","pass3");
+            db.insert("Сидоров", "Иван", "nick4", "login4","pass4");
+            db.insert("Саидов", "Саид", "nick5", "login5","pass5");
+            db.insert("Николаев", "Николай", "nick6", "login6","pass6");
+            db.insert("Николаева", "Анна", "nick7", "login7","pass7");
+            db.select(1);
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            this.disconnect();  // когда приложение заканчивает работу
         }
     }
 
@@ -100,6 +125,39 @@ public class DataBase {
                 System.out.printf("%s - %s - %s\n", resultSet.getString(4), resultSet.getString(5), resultSet.getString(6));
             }
         }
+    }
+    public String selectNick(Integer id) throws SQLException {
+        String nick = "";
+        try (final PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM chatClients WHERE id = ?")) {
+            preparedStatement.setInt(1, id);
+            final ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                nick = resultSet.getString(4);
+            }
+        }
+        return nick;
+    }
+    public String selectPass(Integer id) throws SQLException {
+        String pass = "";
+        try (final PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM chatClients WHERE id = ?")) {
+            preparedStatement.setInt(1, id);
+            final ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                pass = resultSet.getString(6);
+            }
+        }
+        return pass;
+    }
+    public String selectLogin(Integer id) throws SQLException {
+        String login = "";
+        try (final PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM chatClients WHERE id = ?")) {
+            preparedStatement.setInt(1, id);
+            final ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                login = resultSet.getString(5);
+            }
+        }
+        return login;
     }
     public void dropTable() throws SQLException {
         try {

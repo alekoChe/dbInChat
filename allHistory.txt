@@ -25,3 +25,5 @@
 От nick1 кому nick0: sssssssssssssss
 От nick1 кому nick0: nnnnnnnnnnnnnn
 От nick0 кому nick1: bbbbbbbbbbbbb
+От nick2 кому nick0: пирвейт!
+От nick0 кому nick2: здоровеньки булы
