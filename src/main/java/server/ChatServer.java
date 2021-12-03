@@ -1,5 +1,7 @@
 package server;
 
+import lesson3FileIO.FileClient;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -51,6 +53,17 @@ public class ChatServer {
         if (client != null) {
             client.sendMessage("От " + from.getNick() + ": " + msg);
             from.sendMessage("Участнику " + nickTo + ": " + msg);
+            /////////// запись в файл allHistory                //////////////////////////////////////
+            final String mess ="От " + from.getNick() + " кому " + nickTo + ": " + msg;           ////
+            FileClient f = new FileClient();                                                      ////
+            f.writeInfoIntoFile(mess, "allHistory.txt");                                     ////
+            /////////// запись в файл отправителя ////////////////////////////////////////////////////
+            final  String pathSendersFile = "history_" + from.getNick() + ".txt";                 ////
+            f.writeInfoIntoFile(mess, pathSendersFile);                                           ////
+            //////////// запись в файл адресата //////////////////////////////////////////////////////
+            final String pathAddresseesFile = "history_" + nickTo + ".txt";
+            f.writeInfoIntoFile(mess, pathAddresseesFile);
+
             return;
         }
         from.sendMessage("Участника с ником " + nickTo + " нет в чат-комнате" );

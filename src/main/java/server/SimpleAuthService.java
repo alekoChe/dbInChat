@@ -1,6 +1,7 @@
 package server;
 
 import db.DataBase;
+import lesson3FileIO.FileClient;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -11,18 +12,20 @@ public class SimpleAuthService implements AuthService {
 
     public SimpleAuthService() {
         users = new ArrayList<>();  // инициализируем users, иначе ничего туда не положишь
-//        for (int i = 0; i < 5; i++) {
-//            users.add(new UserData("login" + i, "pass" + i, "nick" + i));
-//        }
-        DataBase db = new DataBase();
         for (int i = 0; i < 5; i++) {
-            try {
-                db.writeFromDBIntoUsersList(users, i + 1);
-                db.dropTable();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            users.add(new UserData("login" + i, "pass" + i, "nick" + i));
+            FileClient f = new FileClient(); // создаем объект класса FileClient
+            f.createUserHistoryFileInForLoop(i); // и применяем метод createUserHistoryFileInForLoop(i)
         }
+//        DataBase db = new DataBase();
+//        for (int i = 0; i < 5; i++) {
+//            try {
+//                db.writeFromDBIntoUsersList(users, i + 1);
+//                db.dropTable();
+//            } catch (SQLException e) {
+//                e.printStackTrace();
+//            }
+//        }
     }
 
     @Override
