@@ -56,12 +56,12 @@ public class ChatServer {
             /////////// запись в файл allHistory                //////////////////////////////////////
             final String mess ="От " + from.getNick() + " кому " + nickTo + ": " + msg;           ////
             FileClient f = new FileClient();                                                      ////
-            f.writeInfoIntoFile(mess, "allHistory.txt");                                     ////
+            //f.writeInfoIntoFile(mess, "allHistory.txt");                                     ////
             /////////// запись в файл отправителя ////////////////////////////////////////////////////
             final  String pathSendersFile = "history_" + from.getNick() + ".txt";                 ////
             f.writeInfoIntoFile(mess, pathSendersFile);                                           ////
             //////////// запись в файл адресата //////////////////////////////////////////////////////
-            final String pathAddresseesFile = "history_" + nickTo + ".txt";
+            final String pathAddresseesFile = "history_" + nickTo + ".txt";                       ////
             f.writeInfoIntoFile(mess, pathAddresseesFile);
 
             return;

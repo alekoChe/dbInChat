@@ -27,3 +27,11 @@
 От nick0 кому nick1: bbbbbbbbbbbbb
 От nick2 кому nick0: пирвейт!
 От nick0 кому nick2: здоровеньки булы
+От nick0 кому nick5: как дела?
+От nick5 кому nick0: все ок!
+От nick0 кому nick5: ну пока!
+От nick5 кому nick0: пока!
+От nick5 кому nick6: lujh;trok
+От nick6 кому nick5: eughtrl;ikewrhtj;
+От nick6 кому nick5: fukuiy;l
+От nick5 кому nick6: fgukyugil

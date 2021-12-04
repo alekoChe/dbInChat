@@ -46,10 +46,10 @@ public class FileClient {
 
     public void writeInfoIntoFile(String info, String path){
         /** Записываем инфу в файл. На входе информация info(С переводом строки) и путь к файлу path
+         *
           */
-        //File outputFile = new File("history_nick4.txt");
+        //final String path = "history_" + nick + ".txt";
         File outputFile = new File(path);
-        //String s = "Java hello!";
         info += "\n";
         final byte[] bytes = info.getBytes(StandardCharsets.UTF_8);
 //        try(FileOutputStream fos = new FileOutputStream(outputFile, true)) {
@@ -70,7 +70,7 @@ public class FileClient {
     }
     public String outputHistoryOfChat(String nick, int lengthOutList) {
         /** выводим историю чата для клиента. В качестве параметров ник клиента,
-         * (этот ник будет преобразован в название файла), и размер выводимого списка
+         * (этот ник будет преобразован в название файла), и размер выводимого списка - lengthOutList(по условию 100)
          */
         FileClient f = new FileClient();
         Path path = Path.of( f.getPath() + "history_" + nick + ".txt");

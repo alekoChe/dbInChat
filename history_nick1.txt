@@ -22,3 +22,17 @@
 От nick1 кому nick0: sssssssssssssss
 От nick1 кому nick0: nnnnnnnnnnnnnn
 От nick0 кому nick1: bbbbbbbbbbbbb
+От nick5 кому nick1: nnnnnnnnnnnnnnnnnnnn
+От nick1 кому nick5: xxxxxxxxxxxxxxxxxxxxx
+/clients nick1 
+nick1: aaaaaaaaaaaaaaaaaaaaaaaaaaa
+Пользователь nick0 зашел в чат
+/clients nick1 nick0 
+nick0: aaaaaaaaaaaaaaaaaaaaaaaaa
+От nick0: iiiiiiiiiiiiiiiiiiiiiiiiiii
+От nick0 кому nick1: iiiiiiiiiiiiiiiiiiiiiiiiiii
+Участнику nick0: jjjjjjjjjjjjjjjjjjjjjjjjjj
+От nick1 кому nick0: jjjjjjjjjjjjjjjjjjjjjjjjjj
+nick1: aaaaaaaaaaaaaaaaaaa
+nick0: bbbbbbbbbbbbbbbbb
+/clients nick1 

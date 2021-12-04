@@ -1,0 +1,10 @@
+/clients nick6 nick5 
+nick6: hy!
+От nick5: lujh;trok
+От nick5 кому nick6: lujh;trok
+Участнику nick5: eughtrl;ikewrhtj;
+От nick6 кому nick5: eughtrl;ikewrhtj;
+Участнику nick5: fukuiy;l
+От nick6 кому nick5: fukuiy;l
+От nick5: fgukyugil
+От nick5 кому nick6: fgukyugil
