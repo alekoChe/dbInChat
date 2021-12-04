@@ -1,0 +1,10 @@
+/clients nick7 nick4 
+nick7: dyjgyhlk
+Участнику nick4: fdtghfgjyk
+От nick7 кому nick4: fdtghfgjyk
+От nick4: aaaaaaaaaaaaa
+От nick4 кому nick7: aaaaaaaaaaaaa
+Участнику nick4: bbbbbbbbbbbbbbbb
+От nick7 кому nick4: bbbbbbbbbbbbbbbb
+От nick4: cccccccccccccccc
+От nick4 кому nick7: cccccccccccccccc

@@ -15,3 +15,17 @@ Java hello!
 Java hello!
 Java hello!
 Java hello!
+/clients nick4 
+nick4: dfjguk
+Пользователь nick7 зашел в чат
+/clients nick7 nick4 
+nick7: dyjgyhlk
+От nick7: fdtghfgjyk
+От nick7 кому nick4: fdtghfgjyk
+Участнику nick7: aaaaaaaaaaaaa
+От nick4 кому nick7: aaaaaaaaaaaaa
+От nick7: bbbbbbbbbbbbbbbb
+От nick7 кому nick4: bbbbbbbbbbbbbbbb
+Участнику nick7: cccccccccccccccc
+От nick4 кому nick7: cccccccccccccccc
+/clients nick4 
