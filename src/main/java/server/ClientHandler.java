@@ -1,9 +1,13 @@
 package server;
 
+import lesson3FileIO.FileClient;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 
 public class ClientHandler {
@@ -16,6 +20,7 @@ public class ClientHandler {
     private final DataInputStream in;
     private final DataOutputStream out;
     private String nick;
+    private final ExecutorService cachedService;
 
     public ClientHandler(Socket socket, ChatServer server) {
         try {
@@ -24,16 +29,28 @@ public class ClientHandler {
             this.server = server;
             this.in = new DataInputStream(socket.getInputStream());
             this.out = new DataOutputStream(socket.getOutputStream());
+            this.cachedService = Executors.newCachedThreadPool();
 
-            new Thread(() -> { // слушает сообщения от клиентов и читает их
-                try {
-                    authenticate();  // перед тем как писать сообщения пользователь должен авторизоваться
-                    readMessages();
-                } finally {
-                    closeConnection();
-                }
-            }).start();
+            cachedService.execute(() -> {
+                new Thread(() -> { // слушает сообщения от клиентов и читает их
+                    try {
+                        authenticate();  // перед тем как писать сообщения пользователь должен авторизоваться
+                        readMessages();
+                    } finally {
+                        closeConnection();
+                    }
+                }).start();
+            });
+            cachedService.shutdown();
 
+//            new Thread(() -> { // слушает сообщения от клиентов и читает их
+//                try {
+//                    authenticate();  // перед тем как писать сообщения пользователь должен авторизоваться
+//                    readMessages();
+//                } finally {
+//                    closeConnection();
+//                }
+//            }).start();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -99,6 +116,9 @@ public class ClientHandler {
         try {
             System.out.println("SERVER: Send message to " + nick);
             out.writeUTF(message);
+            FileClient f = new FileClient();
+            final String path = "history_" + nick + ".txt";
+            f.writeInfoIntoFile(message, path); // запись сообщения в историю
         } catch (IOException e) {
             e.printStackTrace();
         }

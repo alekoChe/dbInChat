@@ -1,0 +1,37 @@
+От nick1Участнику nick0: hello
+От nick0Участнику nick1: how do uoy do
+От nick0Участнику nick1: all right
+От nick1 кому nick0: hello
+От nick0 кому nick1: hi
+От nick0 кому nick1: how do uyo do
+От nick1 кому nick0: fain, thenks
+От nick1 кому nick0: by by
+От nick0 кому nick1: by
+От nick1 кому nick0: hello
+От nick0 кому nick1: hy
+От nick1 кому nick0: aaaaaaaaaaaaaaaaaaa
+От nick0 кому nick1: bbbbbbbbbbbbbbbb
+От nick1 кому nick0: cccccccccccccccccc
+От nick0 кому nick1: dddddddddddddddddd
+От nick1 кому nick0: eeee
+От nick0 кому nick1: fffffff
+От nick1 кому nick0: sdfhfgj
+От nick0 кому nick1: sdfhfhdj
+От nick0 кому nick1: hjklhjk;
+От nick1 кому nick0: glil;lh;
+От nick1 кому nick0: gggggggggggggg
+От nick0 кому nick1: jjjjjjjjjjjjjj
+От nick0 кому nick1: lllllllllllllllllll
+От nick1 кому nick0: sssssssssssssss
+От nick1 кому nick0: nnnnnnnnnnnnnn
+От nick0 кому nick1: bbbbbbbbbbbbb
+От nick2 кому nick0: пирвейт!
+От nick0 кому nick2: здоровеньки булы
+От nick0 кому nick5: как дела?
+От nick5 кому nick0: все ок!
+От nick0 кому nick5: ну пока!
+От nick5 кому nick0: пока!
+От nick5 кому nick6: lujh;trok
+От nick6 кому nick5: eughtrl;ikewrhtj;
+От nick6 кому nick5: fukuiy;l
+От nick5 кому nick6: fgukyugil

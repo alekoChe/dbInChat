@@ -1,0 +1,24 @@
+От nick2 кому nick0: пирвейт!
+От nick0 кому nick2: здоровеньки булы
+/clients nick2 
+Пользователь nick4 зашел в чат
+/clients nick2 nick4 
+От nick4: dfjgyhgjk
+От nick4 кому nick2: dfjgyhgjk
+Участнику nick4: dfghhj
+От nick2 кому nick4: dfghhj
+/clients nick2 
+/clients nick2 
+/clients nick2 
+Пользователь nick3 зашел в чат
+/clients nick2 nick3 
+От nick3: hglkjhl
+От nick3 кому nick2: hglkjhl
+Участнику nick3: hlhjgljkhg
+От nick2 кому nick3: hlhjgljkhg
+Пользователь nick5 зашел в чат
+/clients nick2 nick5 nick3 
+nick5: aaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+nick3: sgujhgjk
+/clients nick2 nick3 
+/clients nick2 

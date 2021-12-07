@@ -1,5 +1,7 @@
 package ru.gbmodule3db.dbinchat;
 
+import lesson3FileIO.FileClient;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -57,6 +59,9 @@ public class ChatClient {
                             nick = split[1];
                             nickIsInitialisation = true;
                             controller.assigningUserNickToForm(nick); // выводим в спец. поле имя клиента
+                            ////////////////  здесь должен быть метод, который выводит историю чата !!!!!!!!!!!!!!!!
+                            FileClient f = new FileClient();
+                            controller.addMessage(f.outputHistoryOfChat(nick, 100));  // метод, который выводит историю чата
                             controller.addMessage("Успешная авторизация под ником " + nick);
                             controller.setAuth(true);
                             break;

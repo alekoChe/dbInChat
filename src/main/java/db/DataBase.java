@@ -1,34 +1,35 @@
 package db;
 
+import server.SimpleAuthService;
+
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DataBase {
     private Connection connection;
     private Statement statement;  // этот класс позволяет делать запросы к базе данных
 
+    public DataBase(){
+    }
+
     public static void main(String[] args) {
         DataBase db = new DataBase();
         try {
-            db.connect();   // когда приложение стартует
-            db.createTable();
-            db.insert("Иванов", "Иван", "ivan1", "login1","pass1");
-            db.insert("Петров", "Петр", "pedro1", "login2","pass2");
-            db.insert("Иванова", "Мария", "masha1", "login3","pass3");
-            db.insert("Сидоров", "Иван", "ivan2", "login4","pass4");
-            db.readEx();
+            db.connect();
             db.dropTable();
-
-//            jdbcApp.update(1, 100);
-//            jdbcApp.select(1);
-//            jdbcApp.select(2);
-//            jdbcApp.selectByName("bob%' union SELECT 1, sql, 1 FROM sqlite_master --");
-//            jdbcApp.batchInsert();
-//            jdbcApp.selectByName("Bob%");
-//            jdbcApp.dropTable();
+            db.createTable();
+            db.insert("Сидоровa", "Мария", "nick0", "login0","pass0");
+            db.insert("Иванов", "Иван", "nick1", "login1","pass1");
+            db.insert("Петров", "Петр", "nick2", "login2","pass2");
+            db.insert("Иванова", "Мария", "nick3", "login3","pass3");
+            db.insert("Сидоров", "Иван", "nick4", "login4","pass4");
+            db.insert("Саидов", "Саид", "nick5", "login5","pass5");
+            db.insert("Николаев", "Николай", "nick6", "login6","pass6");
+            db.insert("Николаева", "Анна", "nick7", "login7","pass7");
+            db.select(1);
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            db.disconnect();  // когда приложение заканчивает работу
         }
     }
 
@@ -86,6 +87,17 @@ public class DataBase {
             }
         }
     }
+
+    public void writeFromDBIntoUsersList(List users, Integer id) throws SQLException {
+        try (final PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM chatClients WHERE id = ?")) {
+            preparedStatement.setInt(1, id);
+            final ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                //System.out.printf("%s - %s - %s\n", resultSet.getString(4), resultSet.getString(5), resultSet.getString(6));
+                users.add(resultSet.getString(4) + resultSet.getString(5) + resultSet.getString(6));
+            }
+        }
+    }
     public void select(Integer id) throws SQLException {
         try (final PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM chatClients WHERE id = ?")) {
             preparedStatement.setInt(1, id);
@@ -94,6 +106,39 @@ public class DataBase {
                 System.out.printf("%s - %s - %s\n", resultSet.getString(4), resultSet.getString(5), resultSet.getString(6));
             }
         }
+    }
+    public String selectNick(Integer id) throws SQLException {
+        String nick = "";
+        try (final PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM chatClients WHERE id = ?")) {
+            preparedStatement.setInt(1, id);
+            final ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                nick = resultSet.getString(4);
+            }
+        }
+        return nick;
+    }
+    public String selectPass(Integer id) throws SQLException {
+        String pass = "";
+        try (final PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM chatClients WHERE id = ?")) {
+            preparedStatement.setInt(1, id);
+            final ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                pass = resultSet.getString(6);
+            }
+        }
+        return pass;
+    }
+    public String selectLogin(Integer id) throws SQLException {
+        String login = "";
+        try (final PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM chatClients WHERE id = ?")) {
+            preparedStatement.setInt(1, id);
+            final ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                login = resultSet.getString(5);
+            }
+        }
+        return login;
     }
     public void dropTable() throws SQLException {
         try {

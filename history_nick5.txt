@@ -1,0 +1,25 @@
+От nick0 кому nick5: как дела?
+От nick5 кому nick0: все ок!
+От nick0 кому nick5: ну пока!
+От nick5 кому nick0: пока!
+/clients nick5 
+nick5: ectv cfk.n
+Пользователь nick6 зашел в чат
+/clients nick6 nick5 
+nick6: hy!
+Участнику nick6: lujh;trok
+От nick5 кому nick6: lujh;trok
+От nick6: eughtrl;ikewrhtj;
+От nick6 кому nick5: eughtrl;ikewrhtj;
+От nick6: fukuiy;l
+От nick6 кому nick5: fukuiy;l
+Участнику nick6: fgukyugil
+От nick5 кому nick6: fgukyugil
+/clients nick5 
+От nick5 кому nick1: nnnnnnnnnnnnnnnnnnnn
+От nick1 кому nick5: xxxxxxxxxxxxxxxxxxxxx
+/clients nick2 nick5 nick3 
+nick5: aaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+Участнику nick3: xxxxxxxxxxxxxxxxxxxxxxxxxxx
+От nick5 кому nick3: xxxxxxxxxxxxxxxxxxxxxxxxxxx
+nick3: sgujhgjk
