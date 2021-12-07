@@ -36,3 +36,11 @@ nick0: aaaaaaaaaaaaaaaaaaaaaaaaa
 От nick1 кому nick0: jjjjjjjjjjjjjjjjjjjjjjjjjj
 nick1: aaaaaaaaaaaaaaaaaaa
 nick0: bbbbbbbbbbbbbbbbb
+/clients nick0 
+Пользователь nick1 зашел в чат
+/clients nick1 nick0 
+Участнику nick1: dtrhtyikuy
+От nick0 кому nick1: dtrhtyikuy
+От nick1: tfdhghg
+От nick1 кому nick0: tfdhghg
+/clients nick0 

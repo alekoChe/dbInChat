@@ -18,3 +18,8 @@ nick6: hy!
 /clients nick5 
 От nick5 кому nick1: nnnnnnnnnnnnnnnnnnnn
 От nick1 кому nick5: xxxxxxxxxxxxxxxxxxxxx
+/clients nick2 nick5 nick3 
+nick5: aaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+Участнику nick3: xxxxxxxxxxxxxxxxxxxxxxxxxxx
+От nick5 кому nick3: xxxxxxxxxxxxxxxxxxxxxxxxxxx
+nick3: sgujhgjk

@@ -1,10 +1,13 @@
 package threads;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class WaitNotifyClass {
     private final Object mon = new Object();
     private volatile char currentLetter = 'A';
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         WaitNotifyClass waitNotifyObj = new WaitNotifyClass();
         Thread thread1 = new Thread(() -> {
             waitNotifyObj.printA();
@@ -18,6 +21,7 @@ public class WaitNotifyClass {
         thread1.start();
         thread2.start();
         thread3.start();
+
     }
 
     public void printA() {

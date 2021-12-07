@@ -29,3 +29,8 @@ nick7: dyjgyhlk
 Участнику nick7: cccccccccccccccc
 От nick4 кому nick7: cccccccccccccccc
 /clients nick4 
+/clients nick2 nick4 
+Участнику nick2: dfjgyhgjk
+От nick4 кому nick2: dfjgyhgjk
+От nick2: dfghhj
+От nick2 кому nick4: dfghhj

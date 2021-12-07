@@ -36,3 +36,9 @@ nick0: aaaaaaaaaaaaaaaaaaaaaaaaa
 nick1: aaaaaaaaaaaaaaaaaaa
 nick0: bbbbbbbbbbbbbbbbb
 /clients nick1 
+/clients nick1 
+/clients nick1 nick0 
+От nick0: dtrhtyikuy
+От nick0 кому nick1: dtrhtyikuy
+Участнику nick0: tfdhghg
+От nick1 кому nick0: tfdhghg

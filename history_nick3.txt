@@ -1,1 +1,12 @@
-Java hello!
+Java hello!/clients nick2 nick3 
+Участнику nick2: hglkjhl
+От nick3 кому nick2: hglkjhl
+От nick2: hlhjgljkhg
+От nick2 кому nick3: hlhjgljkhg
+Пользователь nick5 зашел в чат
+/clients nick2 nick5 nick3 
+nick5: aaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+От nick5: xxxxxxxxxxxxxxxxxxxxxxxxxxx
+От nick5 кому nick3: xxxxxxxxxxxxxxxxxxxxxxxxxxx
+nick3: sgujhgjk
+/clients nick2 nick3 
