@@ -14,18 +14,6 @@ public class FileClient {
     }
 
     public static void main(String[] args) {
-//        FileClient f = new FileClient();
-//        File file = new File("C:\\Users\\aleko\\IdeaProject\\dbInChat", "myFile_01.txt");
-//        boolean exists = file.exists();
-//        System.out.println(exists);
-//
-//        File outputFile = new File("history_nick4.txt");
-//        String s = "Java hello!";
-//        f.writeInfoIntoFile(s, "history_nick4.txt");
-//
-//        //////////////////////////////////////////////
-//        String history = f.outputHistoryOfChat("nick0", 100);
-//        System.out.println(history);
     }
     public void createUserHistoryFileInForLoop(int i) {
         /** метод создает фаил (в котором должна храниться история клиента) в цикле for
@@ -52,13 +40,6 @@ public class FileClient {
         File outputFile = new File(path);
         info += "\n";
         final byte[] bytes = info.getBytes(StandardCharsets.UTF_8);
-//        try(FileOutputStream fos = new FileOutputStream(outputFile, true)) {
-//            fos.write(bytes);
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
         try(FileOutputStream fos = new FileOutputStream(outputFile, true);
             final BufferedOutputStream bos = new BufferedOutputStream(fos)) {
             bos.write(bytes);
@@ -90,7 +71,6 @@ public class FileClient {
             historyChat += list.get(i) + "\n";
             //System.out.println(list.get(i));
         }
-        //System.out.println(historyChat);
         return historyChat;
     }
 }
