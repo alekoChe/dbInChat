@@ -11,25 +11,6 @@ public class DataBase {
     private Statement statement;  // этот класс позволяет делать запросы к базе данных
 
     public DataBase(){
-//        try {
-//            //this.dropTable();
-//            this.connect();   // когда приложение стартует
-//            this.createTable();
-//            this.insert("Сидоровa", "Мария", "nick0", "login0","pass0");
-//            this.insert("Иванов", "Иван", "nick1", "login1","pass1");
-//            this.insert("Петров", "Петр", "nick2", "login2","pass2");
-//            this.insert("Иванова", "Мария", "nick3", "login3","pass3");
-//            this.insert("Сидоров", "Иван", "nick4", "login4","pass4");
-//            this.insert("Саидов", "Саид", "nick5", "login5","pass5");
-//            this.insert("Николаев", "Николай", "nick6", "login6","pass6");
-//            this.insert("Николаева", "Анна", "nick7", "login7","pass7");
-//            //this.readEx();
-//
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        } finally {
-//            //this.disconnect();  // когда приложение заканчивает работу
-//        }
     }
 
     public static void main(String[] args) {
